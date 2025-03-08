@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 286 612">
+  <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+
+      .st1 {
+        mask: url(#mask);
+      }
+
+      .st2 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <mask id="mask" x="-374.77" y="0" width="727.35" height="612" maskUnits="userSpaceOnUse">
+      <polygon class="st0" points="17.48 1.45 27.3 9.01 27.3 599.84 19.05 609.18 125.66 589.7 115.96 581.15 115.96 299.65 195.65 244.78 195.65 570.62 189.55 580.16 281.8 566.84 271.39 556.5 271.39 230.67 281.26 224.11 229.03 224.11 269.95 201.44 262.41 193.99 262.41 10.3 273.18 1.45 181.11 1.45 183.8 206.52 117.4 250.15 117.4 10 120.99 1.45 17.48 1.45"/>
+    </mask>
+    <linearGradient id="linear-gradient" x1="-374.77" y1="306" x2="352.58" y2="306" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#850"/>
+      <stop offset=".13" stop-color="#e7bb54"/>
+      <stop offset=".16" stop-color="#eac35c"/>
+      <stop offset=".25" stop-color="#f4da74"/>
+      <stop offset=".33" stop-color="#fae982"/>
+      <stop offset=".4" stop-color="#fdee88"/>
+      <stop offset=".45" stop-color="#fae882"/>
+      <stop offset=".52" stop-color="#f3d771"/>
+      <stop offset=".6" stop-color="#e7bc55"/>
+      <stop offset=".6" stop-color="#e7bb54"/>
+      <stop offset=".8" stop-color="#fdf08e"/>
+      <stop offset=".83" stop-color="#f9eb89"/>
+      <stop offset=".87" stop-color="#f0dc7d"/>
+      <stop offset=".91" stop-color="#e0c568"/>
+      <stop offset=".95" stop-color="#c9a44b"/>
+      <stop offset="1" stop-color="#ad7a26"/>
+      <stop offset="1" stop-color="#ab7724"/>
+    </linearGradient>
+  </defs>
+  <g class="st1">
+    <rect class="st2" x="-374.77" width="727.35" height="612"/>
+  </g>
+</svg>

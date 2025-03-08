@@ -1,0 +1,756 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #9c5a5a;
+}
+
+/* Menú de Navegación */
+/* Estilos para el elemento en el lado izquierdo */
+
+nav {
+    background-color: black;
+    padding: 10px 0 20px;
+    width: 100%;
+    position: fixed; /* Fija el menú en la parte superior */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    align-items: center; /* Centra verticalmente */
+}
+.nav-left {
+    margin-right: auto; /* Empuja el menú a la derecha */
+    padding-left: 50px; /* Espaciado a la izquierda */
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen */
+}
+
+.nav-left img {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-right: 200px; /* Margen de 300px a la derecha */
+    padding-top: 8px;
+    gap: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #e4c306;
+}
+
+/* Menú Hamburguesa (oculto por defecto) */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0; /* Alinea el menú desplegable a la derecha */
+        width: 100%; /* Ancho del menú desplegable */
+        text-align: center; /* Alinea el texto a la derecha */
+        margin-right: 0; /* Elimina el margen en móviles */
+        padding: 10px 0; /* Espaciado interno */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Espaciado entre botones */
+    }
+
+    .nav-links a {
+        padding: 10px 20px; /* Espaciado interno de los botones */
+        display: block; /* Hace que los enlaces ocupen todo el ancho */
+        font-size: 1.1rem; /* Tamaño de fuente más grande */
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        background-color: #e4c306; /* Color de fondo al hacer hover */
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+}
+
+/* Header */
+header {
+    background-color: black;
+    color: #fff;
+    padding: 105px 20px 20px 30px; /* Ajuste del padding para evitar espacio blanco */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Evita desbordamientos */
+    z-index: 500px;
+}
+
+header .logo img {
+    max-width: 100%; /* Asegura que el logo no se desborde en pantallas pequeñas */
+    height: auto; /* Mantiene la proporción */
+    width: 630px; /* Tamaño del logo en pantallas grandes (ajusta según necesites) */
+    animation: fadeInLogo 2s ease-in-out; /* Animación de 2 segundos */
+}
+/* Keyframes para la animación de aparición */
+@keyframes fadeInLogo {
+    0% {
+        opacity: 0; /* Inicia invisible */
+        transform: translateY(-20px); /* Desplazamiento hacia arriba */
+    }
+    100% {
+        opacity: 1; /* Termina completamente visible */
+        transform: translateY(0); /* Vuelve a su posición original */
+    }
+}
+
+header .header-text h1 {
+    margin: 20px 0 5px; /* Espaciado ajustado */
+    font-size: 2.5rem; /* Tamaño de fuente para pantallas grandes */
+    color: #000000;
+}
+
+header .header-text p {
+    margin: 0;
+    font-size: 2rem; /* Tamaño de fuente para pantallas grandes */
+    color: white;
+}
+
+/* Estilos para la flecha */
+.arrow-down {
+    width: 30px; /* Tamaño de la flecha */
+    height: 30px;
+    margin: 20px auto 0; /* Centra la flecha y añade espacio arriba */
+    position: relative;
+}
+
+.arrow-down::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20px; /* Ancho de la flecha */
+    height: 20px;
+    border-right: 3px solid #e4c306; /* Línea diagonal derecha */
+    border-bottom: 3px solid #e4c306; /* Línea diagonal inferior */
+    transform: translate(-50%, 0) rotate(45deg); /* Rota la flecha 45 grados */
+    animation: arrowAnimation 1.5s infinite; /* Animación en bucle */
+}
+
+/* Animación de la flecha */
+@keyframes arrowAnimation {
+    0% {
+        transform: translate(-50%, 0) rotate(45deg); /* Posición inicial */
+        opacity: 0; /* Inicia transparente */
+    }
+    50% {
+        transform: translate(-50%, 10px) rotate(45deg); /* Se mueve hacia abajo */
+        opacity: 1; /* Opacidad completa */
+    }
+    100% {
+        transform: translate(-50%, 20px) rotate(45deg); /* Vuelve a la posición inicial */
+        opacity: 0; /* Vuelve a ser transparente */
+    }
+}
+
+/* Media Queries para Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 150px 20px 20px; /* Menos padding en pantallas pequeñas */
+    }
+
+    header .logo img {
+        width: 500px; /* Tamaño del logo reducido en pantallas medianas */
+    }
+
+    header .header-text h1 {
+        font-size: 2rem; /* Tamaño de fuente más pequeño */
+    }
+
+    header .header-text p {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño */
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo img {
+        width: 200px; /* Tamaño del logo aún más pequeño en móviles */
+    }
+
+    header .header-text h1 {
+        font-size: 1.8rem; /* Tamaño de fuente más pequeño */
+    }
+
+    header .header-text p {
+        font-size: 1.2rem; /* Tamaño de fuente más pequeño */
+    }
+}
+/* Sección Nuestras Clases */
+#clases {
+    padding: 80px 20px; /* Espaciado interno */
+    background-color: #f4f4f4; /* Fondo claro */
+    text-align: center; /* Centra el contenido */
+}
+
+#clases h2 {
+    font-size: 2.5rem;
+    color: black; /* Color del título */
+    margin-bottom: 40px; /* Espaciado inferior */
+}
+
+.clases-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
+    gap: 20px; /* Espacio entre las cajas */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+.clase-card {
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; /* Oculta el desbordamiento de la imagen */
+    transition: transform 0.3s ease; /* Animación al hacer hover */
+}
+
+.clase-card:hover {
+    transform: translateY(-10px); /* Efecto de levantar la caja */
+}
+
+.clase-card img {
+    width: 100%; /* La imagen ocupa todo el ancho de la caja */
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+}
+
+.clase-card h3 {
+    font-size: 1.5rem;
+    color: #e4c306; /* Color del título de la clase */
+    margin: 20px 20px 10px; /* Espaciado */
+    text-align: left;
+}
+
+.clase-card p {
+    font-size: 1rem;
+    color: #555; /* Color del texto */
+    padding: 0 20px 20px; /* Espaciado interno */
+}
+
+/* Estilos para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+    .clases-container {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+        gap: 15px; /* Reducir el espacio entre cajas */
+    }
+
+    .clase-card {
+        width: 90%; /* Hacer las cajas más anchas en móviles */
+        max-width: 350px; /* Limitar el ancho máximo */
+        margin: 0 auto; /* Centrar las cajas */
+    }
+
+    .clase-card img {
+        height: 150px; /* Reducir la altura de las imágenes en móviles */
+    }
+
+    .clase-card h3 {
+        font-size: 1.3rem; /* Reducir el tamaño del título de la clase */
+        margin: 15px 0 8px; /* Ajustar el espaciado */
+    }
+
+    .clase-card p {
+        font-size: 0.9rem; /* Reducir el tamaño del texto */
+        padding: 0 15px 15px; /* Ajustar el espaciado interno */
+    }
+}
+/* Sección Nuestras Instalaciones */
+#instalaciones {
+    padding: 80px 20px; /* Espaciado interno */
+    background-color: #1E293B; /* Fondo blanco */
+    text-align: center; /* Centra el contenido */
+}
+
+#instalaciones h2 {
+    font-size: 2.5rem;
+    color: #ffffff; /* Color del título */
+    margin-bottom: 40px; /* Espaciado inferior */
+}
+
+/* Contenedor superior (texto + foto grande) */
+.instalaciones-top {
+    display: flex;
+    justify-content: space-between; /* Espacio entre texto y foto */
+    align-items: center; /* Centra verticalmente */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto 40px; /* Centrar y margen inferior */
+}
+
+/* Texto con emojis SVG */
+.instalaciones-texto {
+    width: 45%; /* Ancho del texto */
+    text-align: left ; /* Alinea el texto a la izquierda */
+}
+
+.texto-item {
+    display: flex;
+    flex-direction: column; /* Organiza el contenido en columna */
+    align-items: flex-start; /* Alinea a la izquierda */
+    margin-bottom: 20px; /* Espaciado entre elementos */
+}
+
+.emoji {
+    width: 30px; /* Tamaño del ícono */
+    height: 30px;
+    margin-bottom: 10px; /* Espaciado debajo del ícono */
+    filter: brightness(0) saturate(100%) invert(77%) sepia(90%) saturate(500%) hue-rotate(360deg) brightness(100%) contrast(100%); /* Color amarillo */
+}
+
+.texto-item h3 {
+    font-size: 1.5rem; /* Tamaño del título */
+    color: #e4c306; /* Color amarillo */
+    margin: 0 0 10px 0; /* Espaciado inferior */
+}
+
+.texto-item p {
+    font-size: 1.1rem; /* Tamaño del texto */
+    color: #ffffff; /* Color blanco */
+    margin: 0; /* Elimina el margen por defecto */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Foto grande a la derecha */
+.instalaciones-foto {
+    width: 50%; /* Ancho de la foto */
+}
+
+.instalaciones-foto img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Tres fotos pequeñas con títulos */
+.instalaciones-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
+    gap: 20px; /* Espacio entre fotos */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrar */
+}
+
+.foto-item {
+    background-color: #f4f4f4; /* Fondo gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el desbordamiento de la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Animación al hacer hover */
+    position: relative; /* Para posicionar el texto encima de la imagen */
+}
+
+.foto-item:hover {
+    transform: translateY(-10px); /* Efecto de levantar la caja */
+}
+
+.foto-item h3 {
+    font-size: 1.8rem;
+    color: #ffffff; /* Color del título */
+    padding: 15px; /* Espaciado interno */
+    margin: 0; /* Elimina el margen por defecto */
+    position: absolute; /* Posiciona el texto encima de la imagen */
+    bottom: 0; /* Alinea el texto en la parte inferior */
+    left: 0; /* Alinea el texto a la izquierda */
+    width: 100%; /* Ocupa todo el ancho */
+    background-color: rgba(0, 0, 0, 0); /* Fondo semi-transparente para mejorar la legibilidad */
+    text-align: center; /* Centra el texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Agrega sombra al texto */
+}
+
+
+.foto-item img {
+    width: 100%; /* La imagen ocupa todo el ancho */
+    height: 200px; /* Altura fija */
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+}
+
+/* Estilos para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+    .instalaciones-top {
+        flex-direction: column; /* Cambia a una columna en móviles */
+    }
+
+    .instalaciones-texto, .instalaciones-foto {
+        width: 100%; /* Ocupa todo el ancho */
+    }
+
+    .instalaciones-texto {
+        margin-bottom: 20px; /* Espaciado inferior */
+    }
+
+    .instalaciones-bottom {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+}
+/* Estilos para la sección de instructores */
+#instructores {
+    padding: 40px 20px; /* Espaciado interno */
+    background-color: #E2E8F0; /* Fondo claro para la sección */
+    text-align: center; /* Centrar el texto */
+}
+
+#instructores h2 {
+    font-size: 2.5rem; /* Tamaño del título */
+    margin-bottom: 40px; /* Espaciado inferior */
+    color: #333; /* Color del título */
+}
+
+/* Contenedor de las tarjetas de instructores */
+.instructores-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive: ajusta el número de columnas */
+    gap: 20px; /* Espacio entre tarjetas */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 0 20px; /* Espaciado lateral para pantallas pequeñas */
+}
+
+/* Estilos para cada tarjeta de instructor */
+.instructor-card {
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el desbordamiento de la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Animación al hacer hover */
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.instructor-card:hover {
+    transform: translateY(-10px); /* Levanta la tarjeta */
+}
+
+/* Estilos para la imagen del instructor */
+.instructor-card img {
+    width: 100%; /* La imagen ocupa todo el ancho */
+    height: 200px; /* Altura fija */
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+}
+
+/* Estilos para el nombre del instructor */
+.instructor-card h3 {
+    font-size: 1.5rem; /* Tamaño del nombre */
+    color: #333; /* Color del texto */
+    margin: 15px 0 10px; /* Espaciado */
+}
+
+/* Estilos para la descripción del instructor */
+.instructor-card p {
+    font-size: 1rem; /* Tamaño del texto */
+    color: #666; /* Color del texto */
+    margin: 5px 0; /* Espaciado */
+}
+/* Estilos para la sección de horarios */
+#horario {
+    padding: 40px 20px; /* Espaciado interno */
+    background-color: #f9f9f9; /* Fondo claro para la sección */
+    text-align: center; /* Centrar el texto */
+}
+
+#horario h2 {
+    font-size: 2.5rem; /* Tamaño del título */
+    margin-bottom: 40px; /* Espaciado inferior */
+    color: #333; /* Color del título */
+}
+
+/* Contenedor de la tabla */
+.horario-container {
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrar el contenedor */
+    overflow-x: auto; /* Permite desplazamiento horizontal en pantallas pequeñas */
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%; /* La tabla ocupa todo el ancho */
+    border-collapse: collapse; /* Elimina el espacio entre celdas */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    animation: fadeIn 1s ease-in-out; /* Animación al cargar la tabla */
+}
+
+/* Animación para la tabla */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para las celdas de la tabla */
+th, td {
+    padding: 15px; /* Espaciado interno */
+    text-align: center; /* Centrar el texto */
+    border: 1px solid #ddd; /* Borde de las celdas */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+/* Estilos para el encabezado de la tabla */
+th {
+    background-color: #FFF9E5; /* Fondo amarillo */
+    color: #333; /* Texto oscuro */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Efecto hover en las celdas */
+td:hover {
+    background-color: #e0e0e0; /* Fondo gris más oscuro */
+    transform: scale(1.05); /* Escala la celda ligeramente */
+}
+
+/* Estilos para las filas impares */
+tbody tr:nth-child(odd) {
+    background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+/* Estilos para las filas al pasar el mouse */
+tbody tr:hover {
+    background-color: #d0d0d0; /* Fondo gris más oscuro */
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+    }
+
+    th, td {
+        padding: 10px; /* Reducir el espaciado interno */
+    }
+}
+
+
+/* Estilos para la sección de galería */
+#galeria {
+    padding: 40px 20px; /* Espaciado interno */
+    background-color: #E2E8F0; /* Fondo claro para la sección */
+    text-align: center; /* Centrar el texto */
+}
+
+#galeria h2 {
+    font-size: 2.5rem; /* Tamaño del título */
+    margin-bottom: 40px; /* Espaciado inferior */
+    color: #333; /* Color del título */
+}
+
+/* Contenedor de la galería */
+.galeria-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 20px; /* Espacio entre imágenes */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 0 20px; /* Espaciado lateral para pantallas pequeñas */
+}
+
+/* Estilos para cada ítem de la galería */
+.galeria-item {
+    overflow: hidden; /* Oculta el desbordamiento de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    animation: fadeInUp 0.5s ease-in-out; /* Animación al cargar */
+}
+
+/* Animación al cargar la galería */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto hover en los ítems de la galería */
+.galeria-item:hover {
+    transform: scale(1.05); /* Escala la imagen ligeramente */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Estilos para las imágenes */
+.galeria-item img {
+    width: 100%; /* La imagen ocupa todo el ancho */
+    height: 200px; /* Altura fija */
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+    display: block; /* Elimina el espacio inferior */
+}
+
+/* Responsive para pantallas medianas (2 columnas) */
+@media (max-width: 768px) {
+    .galeria-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+}
+
+/* Responsive para pantallas pequeñas (1 columna) */
+@media (max-width: 480px) {
+    .galeria-container {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+}
+/* Estilos para la sección de contacto */
+#contacto {
+    padding: 40px 20px; /* Espaciado interno */
+    background-color: #f9f9f9; /* Fondo claro para la sección */
+    text-align: center; /* Centrar el texto */
+}
+
+#contacto h2 {
+    font-size: 2.5rem; /* Tamaño del título */
+    margin-bottom: 40px; /* Espaciado inferior */
+    color: #333; /* Color del título */
+}
+
+/* Contenedor de la sección de contacto */
+.contacto-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    gap: 20px; /* Espacio entre elementos */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 0 20px; /* Espaciado lateral para pantallas pequeñas */
+}
+
+/* Estilos para la información de contacto */
+.contacto-info {
+    flex: 1; /* Ocupa el espacio disponible */
+    background-color: white; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.contacto-info h3 {
+    font-size: 1.8rem; /* Tamaño del subtítulo */
+    margin-bottom: 20px; /* Espaciado inferior */
+    color: #333; /* Color del texto */
+}
+
+.contacto-info ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding por defecto */
+}
+
+.contacto-info ul li {
+    font-size: 1.1rem; /* Tamaño del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+    color: #666; /* Color del texto */
+}
+
+.contacto-info ul li strong {
+    color: #333; /* Color del texto en negrita */
+}
+
+/* Estilos para las redes sociales */
+.redes-sociales {
+    margin-top: 20px; /* Espaciado superior */
+}
+
+.redes-sociales h3 {
+    font-size: 1.5rem; /* Tamaño del subtítulo */
+    margin-bottom: 10px; /* Espaciado inferior */
+    color: #333; /* Color del texto */
+}
+
+.redes-sociales a {
+    margin-right: 10px; /* Espacio entre íconos */
+}
+
+.redes-sociales img {
+    width: 32px; /* Tamaño de los íconos */
+    height: 32px;
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.redes-sociales img:hover {
+    transform: scale(1.1); /* Escala el ícono ligeramente */
+}
+
+/* Estilos para el mapa de Google Maps */
+.contacto-mapa {
+    flex: 1; /* Ocupa el espacio disponible */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el desbordamiento del iframe */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.contacto-mapa iframe {
+    width: 100%; /* Ocupa todo el ancho */
+    height: 400px; /* Altura fija */
+    border: 0; /* Elimina el borde del iframe */
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contacto-container {
+        flex-direction: column; /* Apila los elementos verticalmente */
+    }
+
+    .contacto-info, .contacto-mapa {
+        flex: none; /* Elimina el flex para que ocupen todo el ancho */
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
